@@ -80,8 +80,18 @@ date_default_timezone_set('America/Los_Angeles');
             font-size: 1.2rem;
             font-style: italic;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             line-height: 1.5;
+        }
+
+        .leave-message {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+            line-height: 1.5;
+            text-align: center;
         }
 
 
@@ -93,48 +103,6 @@ date_default_timezone_set('America/Los_Angeles');
             flex-wrap: wrap;
         }
 
-        .close-button {
-            background: linear-gradient(135deg, rgba(138, 99, 255, 0.9) 0%, rgba(99, 179, 255, 0.9) 100%);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 16px;
-            padding: 18px 40px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: white;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(138, 99, 255, 0.3);
-        }
-
-        .close-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s;
-        }
-
-        .close-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(138, 99, 255, 0.4);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .close-button:hover::before {
-            left: 100%;
-        }
-
-        .close-button:active {
-            transform: translateY(-1px);
-        }
 
         .back-button {
             background: rgba(255, 255, 255, 0.1);
@@ -186,16 +154,7 @@ date_default_timezone_set('America/Los_Angeles');
             }
 
             .button-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .close-button {
-                font-size: 1.2rem;
-                padding: 16px 35px;
-                width: 100%;
-                max-width: 300px;
+                justify-content: center;
             }
 
             .back-button {
@@ -207,11 +166,6 @@ date_default_timezone_set('America/Los_Angeles');
 
         }
     </style>
-    <script>
-        function showMessage() {
-            alert('You can leave this page now.');
-        }
-    </script>
 </head>
 <body>
     <div class="thankyou-container">
@@ -229,8 +183,11 @@ date_default_timezone_set('America/Los_Angeles');
             We're excited to celebrate with you at our special events!
         </div>
         
+        <div class="leave-message">
+            You can leave this page now.
+        </div>
+        
         <div class="button-container">
-            <button onclick="showMessage()" class="close-button">You can leave this page now</button>
             <a href="index.php" class="back-button">Submit Another RSVP</a>
         </div>
         
