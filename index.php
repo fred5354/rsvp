@@ -862,11 +862,11 @@ if ($_POST) {
         
         <div class="content">
             <div class="greeting">
-                We joyfully invite you to join us as we celebrate 25 years of God's faithfulness at Crosspoint. This milestone celebration will include a special worship service and pastor ordination ceremony, followed by a banquet of fellowship and thanksgiving.
+                We joyfully invite you to join us as we celebrate 25 years of God's faithfulness at Crosspoint. This milestone celebration will include a special worship service and Pastors ordination ceremony, followed by a banquet of fellowship and thanksgiving.
             </div>
             
             <div class="event-section">
-                <h2>Worship Service & Pastor Ordination</h2>
+                <h2>Worship Service & Pastors Ordination</h2>
                 <div class="event-details">
                     <div><strong>Date:</strong> November 9, 2025</div>
                     <div><strong>Time:</strong> 3:00 PM</div>
