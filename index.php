@@ -839,13 +839,12 @@ if ($_POST) {
             }
             
             .logo {
-                padding: 15px 20px;
-                gap: 12px;
+                
             }
             
             .logo-symbol {
-                width: 40px;
-                height: 40px;
+                width: 200px;
+                
             }
             
             .logo-text {
@@ -870,7 +869,7 @@ if ($_POST) {
                 <h2>Worship Service & Pastor Ordination</h2>
                 <div class="event-details">
                     <div><strong>Date:</strong> November 9, 2025</div>
-                    <div><strong>Time:</strong> 9:00 PM</div>
+                    <div><strong>Time:</strong> 3:00 PM</div>
                     <div><strong>Location:</strong> 658 Gibraltar Ct., Milpitas, CA 95035</div>
                 </div>
             </div>
