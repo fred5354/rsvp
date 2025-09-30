@@ -818,7 +818,7 @@ if ($_POST) {
             }
             
             .header .subtitle {
-                font-size: 1.1em;
+                font-size: 1.2em;
             }
             
             .content {
@@ -835,7 +835,7 @@ if ($_POST) {
             }
             
             .greeting {
-                font-size: 1.05em;
+                font-size: 1.2em;
             }
             
             .logo {
