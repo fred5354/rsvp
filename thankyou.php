@@ -85,15 +85,66 @@ date_default_timezone_set('America/Los_Angeles');
         }
 
 
-        .back-button {
-            background: rgba(255, 255, 255, 0.15);
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .close-button {
+            background: linear-gradient(135deg, rgba(138, 99, 255, 0.9) 0%, rgba(99, 179, 255, 0.9) 100%);
             border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            padding: 18px 40px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(138, 99, 255, 0.3);
+        }
+
+        .close-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .close-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(138, 99, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .close-button:hover::before {
+            left: 100%;
+        }
+
+        .close-button:active {
+            transform: translateY(-1px);
+        }
+
+        .back-button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 12px;
             padding: 15px 30px;
             font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.95);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
@@ -101,10 +152,11 @@ date_default_timezone_set('America/Los_Angeles');
         }
 
         .back-button:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.95);
         }
 
         .timestamp {
@@ -133,6 +185,26 @@ date_default_timezone_set('America/Los_Angeles');
                 font-size: 1.1rem;
             }
 
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .close-button {
+                font-size: 1.2rem;
+                padding: 16px 35px;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .back-button {
+                font-size: 1rem;
+                padding: 14px 28px;
+                width: 100%;
+                max-width: 300px;
+            }
+
         }
     </style>
 </head>
@@ -152,7 +224,10 @@ date_default_timezone_set('America/Los_Angeles');
             We're excited to celebrate with you at our special events!
         </div>
         
-        <a href="index.php" class="back-button">Submit Another RSVP</a>
+        <div class="button-container">
+            <button onclick="window.close()" class="close-button">You can close this page now</button>
+            <a href="index.php" class="back-button">Submit Another RSVP</a>
+        </div>
         
         <div class="timestamp">
             Confirmation received on <?php echo date('F j, Y \a\t g:i A T'); ?>
