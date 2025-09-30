@@ -412,6 +412,34 @@ if ($_POST) {
         .radio-group label:has(input:checked) span {
             color: white !important;
         }
+        
+        /* Safari fallback for radio button groups */
+        @supports not (backdrop-filter: blur(10px)) {
+            .radio-group label {
+                background: rgba(255, 255, 255, 0.15) !important;
+            }
+            .radio-group label:hover {
+                background: rgba(255, 255, 255, 0.2) !important;
+            }
+            .radio-group label:has(input:checked) {
+                background: rgba(138, 99, 255, 0.3) !important;
+            }
+        }
+        
+        /* Safari-specific fix for radio button groups */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .radio-group label {
+                background: rgba(255, 255, 255, 0.12) !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+            .radio-group label:hover {
+                background: rgba(255, 255, 255, 0.18) !important;
+            }
+            .radio-group label:has(input:checked) {
+                background: rgba(138, 99, 255, 0.25) !important;
+            }
+        }
 
         .guests-input {
             margin-left: 30px;
@@ -475,10 +503,25 @@ if ($_POST) {
                 .form-group input[type="number"],
                 .form-group select,
                 .guest-name-input input[type="text"],
-                .guests-input input[type="number"] {
+                .guests-input input[type="number"],
+                .radio-group label {
                     background: rgba(255, 255, 255, 0.25) !important;
                     backdrop-filter: none !important;
                     -webkit-backdrop-filter: none !important;
+                }
+                .radio-group label:hover {
+                    background: rgba(255, 255, 255, 0.3) !important;
+                }
+                .radio-group label:has(input:checked) {
+                    background: rgba(138, 99, 255, 0.3) !important;
+                }
+                .submit-btn {
+                    background: linear-gradient(135deg, rgba(138, 99, 255, 0.95) 0%, rgba(99, 179, 255, 0.95) 100%) !important;
+                    backdrop-filter: none !important;
+                    -webkit-backdrop-filter: none !important;
+                }
+                .submit-btn:disabled {
+                    background: rgba(255, 255, 255, 0.1) !important;
                 }
             }
         }
@@ -652,6 +695,28 @@ if ($_POST) {
 
         .submit-btn:disabled::before {
             display: none;
+        }
+        
+        /* Safari fallback for submit button */
+        @supports not (backdrop-filter: blur(20px)) {
+            .submit-btn {
+                background: linear-gradient(135deg, rgba(138, 99, 255, 0.95) 0%, rgba(99, 179, 255, 0.95) 100%) !important;
+            }
+            .submit-btn:disabled {
+                background: rgba(255, 255, 255, 0.1) !important;
+            }
+        }
+        
+        /* Safari-specific fix for submit button */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .submit-btn {
+                background: linear-gradient(135deg, rgba(138, 99, 255, 0.95) 0%, rgba(99, 179, 255, 0.95) 100%) !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+            .submit-btn:disabled {
+                background: rgba(255, 255, 255, 0.08) !important;
+            }
         }
 
         .message {
