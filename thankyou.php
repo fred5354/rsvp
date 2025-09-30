@@ -207,6 +207,51 @@ date_default_timezone_set('America/Los_Angeles');
 
         }
     </style>
+    <script>
+        function closeWindow() {
+            // Try multiple methods to close the window
+            try {
+                // Method 1: Standard window.close()
+                window.close();
+                
+                // Method 2: If window.close() doesn't work, try self.close()
+                setTimeout(function() {
+                    self.close();
+                }, 100);
+                
+                // Method 3: If still doesn't work, try opener.close() for popup windows
+                setTimeout(function() {
+                    if (window.opener) {
+                        window.opener.close();
+                    }
+                }, 200);
+                
+                // Method 4: Last resort - redirect to about:blank
+                setTimeout(function() {
+                    window.location.href = 'about:blank';
+                }, 500);
+                
+            } catch (error) {
+                // If all methods fail, show an alert and redirect
+                alert('Please close this tab manually or use the "Submit Another RSVP" button.');
+                window.location.href = 'index.php';
+            }
+        }
+        
+        // Also try to close when the page loads (for popup windows)
+        window.addEventListener('load', function() {
+            // If this is a popup window, try to close it automatically after a delay
+            if (window.opener && !window.opener.closed) {
+                setTimeout(function() {
+                    try {
+                        window.close();
+                    } catch (e) {
+                        // Ignore errors
+                    }
+                }, 3000); // Auto-close after 3 seconds if it's a popup
+            }
+        });
+    </script>
 </head>
 <body>
     <div class="thankyou-container">
@@ -225,7 +270,7 @@ date_default_timezone_set('America/Los_Angeles');
         </div>
         
         <div class="button-container">
-            <button onclick="window.close()" class="close-button">You can close this page now</button>
+            <button onclick="closeWindow()" class="close-button">You can close this page now</button>
             <a href="index.php" class="back-button">Submit Another RSVP</a>
         </div>
         
