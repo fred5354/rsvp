@@ -86,7 +86,7 @@ date_default_timezone_set('America/Los_Angeles');
 
         .leave-message {
             font-family: 'Crimson Text', serif;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-style: italic;
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 30px;
