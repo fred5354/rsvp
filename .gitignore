@@ -1,0 +1,7 @@
+# Ignore CSV data file containing user submissions
+rsvp_data.csv
+
+# Ignore other sensitive or generated files
+*.log
+*.tmp
+.DS_Store
