@@ -210,6 +210,20 @@ if ($_POST) {
             overflow: hidden;
         }
         
+        /* Safari fallback for backdrop-filter */
+        @supports not (backdrop-filter: blur(20px)) {
+            .event-section {
+                background: rgba(255, 255, 255, 0.15);
+            }
+        }
+        
+        /* Safari-specific fix */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .event-section {
+                background: rgba(255, 255, 255, 0.12);
+            }
+        }
+        
         .event-section::before {
             content: '';
             position: absolute;
@@ -293,6 +307,26 @@ if ($_POST) {
         
         .form-group input::placeholder {
             color: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Safari fallback for main form inputs */
+        @supports not (backdrop-filter: blur(10px)) {
+            .form-group input[type="text"],
+            .form-group input[type="email"],
+            .form-group input[type="number"],
+            .form-group select {
+                background: rgba(255, 255, 255, 0.15);
+            }
+        }
+        
+        /* Safari-specific fix for main form inputs */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .form-group input[type="text"],
+            .form-group input[type="email"],
+            .form-group input[type="number"],
+            .form-group select {
+                background: rgba(255, 255, 255, 0.12);
+            }
         }
         
         .form-group input:focus,
@@ -387,6 +421,20 @@ if ($_POST) {
             color: rgba(255, 255, 255, 0.95);
             -moz-appearance: textfield; /* Firefox */
         }
+        
+        /* Safari fallback for number inputs */
+        @supports not (backdrop-filter: blur(10px)) {
+            .guests-input input[type="number"] {
+                background: rgba(255, 255, 255, 0.15);
+            }
+        }
+        
+        /* Safari-specific fix for number inputs */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .guests-input input[type="number"] {
+                background: rgba(255, 255, 255, 0.12);
+            }
+        }
 
         .guests-input input[type="number"]::-webkit-outer-spin-button,
         .guests-input input[type="number"]::-webkit-inner-spin-button {
@@ -430,6 +478,20 @@ if ($_POST) {
             box-shadow: 0 0 0 4px rgba(138, 99, 255, 0.15),
                         0 8px 24px rgba(0, 0, 0, 0.2);
             transform: translateY(-1px);
+        }
+        
+        /* Safari fallback for text inputs */
+        @supports not (backdrop-filter: blur(10px)) {
+            .guest-name-input input[type="text"] {
+                background: rgba(255, 255, 255, 0.15);
+            }
+        }
+        
+        /* Safari-specific fix for text inputs */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .guest-name-input input[type="text"] {
+                background: rgba(255, 255, 255, 0.12);
+            }
         }
 
         .number-controls {
